@@ -1,0 +1,32 @@
+package exercicio_classe;
+import java.util.Locale;
+import entities.Rectangle;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Rectangle rectangle = new Rectangle();
+		
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Enter the width");
+		rectangle.width = sc.nextDouble();
+		
+		Scanner entrada_dois = new Scanner(System.in);
+		System.out.println("Enter the height");
+		rectangle.height = sc.nextDouble();
+		
+		double final_area = rectangle.area();
+		double final_perimetro = rectangle.perimeter();
+		
+		System.out.println("A área é: " + final_area);
+		System.out.println("O perimetro é: "+ final_perimetro);
+		
+		sc.close(); 
+	}
+
+}
