@@ -30,3 +30,24 @@ public class Main {
 	}
 
 }
+
+
+Classe:
+
+package entities;
+
+public class Rectangle {
+	public double width;
+	public double height;
+	
+	public double area() {
+		double calculo_area = width * height;
+		return calculo_area;
+	}
+	
+	public double perimeter() {
+		double calculo_perimetro = 2 * (width + height);
+		return calculo_perimetro;
+	}
+	
+}
