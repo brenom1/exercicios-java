@@ -1,0 +1,59 @@
+package exercicio_classe;
+import java.util.Locale;
+import entities.Employee;
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Locale.setDefault(Locale.US);
+		Scanner sc = new Scanner(System.in);
+		
+		Employee employee = new Employee();
+		
+		
+		System.out.println("Name");
+		employee.name = sc.nextLine();
+		
+		System.out.println("Gross salary");
+		employee.grossSalary= sc.nextDouble();
+		
+		System.out.println("Tax");
+		employee.tax = sc.nextDouble();
+		
+		double taxa = employee.netSalary();
+		
+		System.out.println("Name: " + employee.name + ", $: " + taxa);
+		
+		System.out.println("Which percentage to increase salary?");
+		double increase = sc.nextDouble();
+		
+		double aumentar = employee.IncreaseSalary(taxa, increase);
+		
+		System.out.println("Updated data: " + employee.name + ", $: " + aumentar);
+		
+		sc.close(); 
+	}
+
+}
+
+
+package entities;
+
+public class Employee {
+	public String name;
+	public double grossSalary;
+	public double tax;
+	
+    public double netSalary() {
+    	double diminuirSalario = grossSalary - tax;
+        return diminuirSalario;
+    }
+
+    public double IncreaseSalary(double salarioAtual, double porcentagem) {
+        double aumento = salarioAtual * (porcentagem / 100);
+        return salarioAtual + aumento;
+    }
+	
+}
